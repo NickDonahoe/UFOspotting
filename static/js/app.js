@@ -1,22 +1,11 @@
 // from data.js
 var tableData = data;
 
-// YOUR CODE HERE!
-tableData.map(row => row.datetime);
-tableData.map(row => row.city);
-tableData.map(row => row.state);
-tableData.map(row => row.country);
-tableData.map(row => row.comment);
-
 var filterDate = d3.select("#filter-btn");
 
 filterDate.on("click", function () {
 
     d3.event.preventDefault();
-
-    d3.select("tbody").selectAll("tr").remove();
-    d3.select("tbody").selectAll("td").remove();
-    
 
     var userInput = d3.select("#datetime");
 
@@ -54,13 +43,17 @@ filterDate.on("click", function () {
 
     });
 
-    // dateT.forEach(function(element) {
-    //     d3.select("tbody")
-    //     .append("td").text(`${element}`)
-    //     d3.select("tbody")
-    //     .append("tr");
-    // });
+});
 
-    // d3.select("tbody").selectAll("td").remove();
+var clearTable = d3.select("#clear-btn");
+
+clearTable.on("click", function () {
+
+    d3.event.preventDefault();
+
+    d3.select("tbody").selectAll("tr").remove();
+    d3.select("tbody").selectAll("td").remove();
 
 });
+
+
